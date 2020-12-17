@@ -1,3 +1,5 @@
 discord_url
+credentials.json
+sheetapi.py
 *.log
 __pycache__

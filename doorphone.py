@@ -20,8 +20,11 @@ def state_machine():
     if state == 0:
         pass
     elif state == 1:
-        logconf.logger.debug("doorphone rang")
-        webhook.post("doorphone rang!!!!")
+        state = 2
+    elif state == 2:
+        if GPIO.input(sw) == 0:
+            logconf.logger.debug("doorphone rang")
+            webhook.post("doorphone rang!!!!")
         state = 0
 
 if __name__ == "__main__":
